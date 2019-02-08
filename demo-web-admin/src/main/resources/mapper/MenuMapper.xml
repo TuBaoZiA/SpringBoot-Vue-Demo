@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ycj.demo.web.admin.dao.MenuMapper" >
+
+  <resultMap id="menu" type="com.ycj.demo.domain.Menu">
+      <id column="id" property="id"/>
+      <result column="path" property="path"/>
+      <result column="component" property="component"/>
+      <result column="redirect" property="redirect"/>
+      <result column="name" property="name"/>
+      <result column="order" property="order"/>
+      <result column="parent_id" property="parentId"/>
+
+      <association property="meta" javaType="com.ycj.demo.domain.MenuMeta">
+          <result column="meta_icon" property="icon"/>
+          <result column="meta_title" property="title"/>
+          <result column="permission" property="permission"/>
+          <result column="permissionId" property="permissionId"/>
+      </association>
+
+  </resultMap>
+
+  <insert id="insertMenu" parameterType="com.ycj.demo.domain.Menu">
+      INSERT INTO `Demo`.`sys_menu` (
+              `path`, `order`, `component`, `redirect`,
+              `name`, `meta_icon`, `meta_title`, `permission_id`,
+              `parent_id` )
+      VALUES
+             ( #{path}, #{order}, #{component}, #{redirect},
+               #{name}, #{meta.icon}, #{meta.title}, #{meta.permissionId},
+               #{parentId} )
+  </insert>
+
+  <update id="updateMenu" parameterType="com.ycj.demo.domain.Menu">
+      UPDATE `Demo`.`sys_menu`
+      SET
+          `path` = #{path},
+          `order` = #{order},
+          `component` = #{component},
+          `redirect` = #{redirect},
+          `name` = #{name},
+          `meta_icon` = #{meta.icon},
+          `meta_title` = #{meta.title},
+          `permission_id` = #{meta.permissionId},
+          `parent_id` = #{parentId}
+      WHERE
+              `id` = #{id}
+  </update>
+
+  <select id="selectNotChildrenMenuById" resultType="com.ycj.demo.domain.Menu" >
+      SELECT
+             id,NAME
+      FROM
+           sys_menu
+      WHERE 1=1
+            <if test=" id!=null ">
+              and id NOT IN (
+                        SELECT
+                               id
+                        FROM
+                             sys_menu
+                        WHERE
+                                parent_id = #{id}
+                           <if test="keepParent == null">
+                            OR id = #{id}
+                           </if>
+                        )
+            </if>
+  </select>
+
+  <select id="selectCountByNameAndNotId" resultType="int">
+      select count(*) from sys_menu
+      where
+      name = #{name}
+      <if test="id != null">
+          AND id != #{id}
+      </if>
+
+  </select>
+
+  <select id="selectParentMenuIdByPermissions" resultType="int" parameterType="list">
+      SELECT
+             MENU.id
+      FROM
+           sys_menu MENU
+               LEFT JOIN sys_permission permission ON permission.id = MENU.permission_id
+      WHERE
+      (
+      <if test="list != null and list.size > 0">
+          permission.`code` IN
+          <foreach collection="list" item="permission" open="(" close=")" separator=",">
+              #{permission}
+          </foreach>
+          OR
+      </if>
+      permission.`code` IS NULL
+      )
+      AND MENU.parent_id IS NULL
+  </select>
+
+  <select id="selectMenuByPermissionsAndParent" resultMap="menu">
+      SELECT
+      menu.*, permission.`code` permission
+      FROM
+      sys_menu menu
+      LEFT JOIN sys_permission permission ON permission.id = menu.permission_id
+      WHERE
+      menu.id IN
+      <foreach collection="parentIds" item="pId" open="(" close=")" separator=",">
+          #{pId}
+      </foreach>
+      OR (
+      (
+      <if test="list != null and list.size > 0">
+          permission.`code` IN
+          <foreach collection="list" item="permission" open="(" close=")" separator=",">
+              #{permission}
+          </foreach>
+          OR
+      </if>
+      permission.`code` IS NULL
+      )
+      AND menu.parent_id IS NOT NULL
+      )
+
+  </select>
+
+
+  <select id="selectAllMenu" resultMap="menu">
+      SELECT
+             menu.*, permission.`code` permission, permission.id permissionId
+      FROM
+           `sys_menu` menu
+               LEFT JOIN sys_permission permission ON permission.id = menu.permission_id
+      ORDER BY
+               menu.`order` DESC
+  </select>
+
+  <update id="updateChildrenParentByParentId">
+      UPDATE `Demo`.`sys_menu`
+      SET `parent_id` = #{newParentId}
+      WHERE
+              `parent_id` = #{parentId}
+  </update>
+
+  <update id="updatePermissionByPermissionId">
+      UPDATE `Demo`.`sys_menu`
+      set permission_id = null
+      where permission_id = #{permissionId}
+  </update>
+
+</mapper>

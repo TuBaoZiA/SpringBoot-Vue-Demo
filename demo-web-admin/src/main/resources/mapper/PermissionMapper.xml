@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ycj.demo.web.admin.dao.PermissionMapper" >
+
+  <select id="getPermissionsByRoles" resultType="string" parameterType="list">
+      SELECT DISTINCT
+                      p.`code`
+      FROM
+           sys_permission p
+               INNER JOIN role_permission rp ON rp.permission_id = p.id
+               INNER JOIN sys_role r ON r.id = rp.role_id
+      WHERE
+              r.`name` IN
+      <foreach collection="list" item="role" open="(" close=")" separator=",">
+          #{role}
+      </foreach>
+
+  </select>
+
+  <select id="selectAllPermissions" resultType="string">
+      SELECT
+             p.`code`
+      FROM
+           sys_permission p
+  </select>
+
+  <delete id="deleteRolePermissionByPermissionId">
+      DELETE
+      FROM
+           role_permission
+      WHERE
+              permission_id = #{permissionId}
+  </delete>
+
+</mapper>

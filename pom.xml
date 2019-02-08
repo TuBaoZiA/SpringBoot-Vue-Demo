@@ -20,7 +20,9 @@
 
 
     <modules>
-
-
+        <module>demo-commons</module>
+        <module>demo-domain</module>
+        <module>demo-dependencies</module>
+        <module>demo-web-admin</module>
     </modules>
 </project>
