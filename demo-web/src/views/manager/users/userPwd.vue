@@ -24,7 +24,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import {updatePwd} from "@/api/user";
+  import {updatePwd} from "../../../api/user";
 
   export default {
     name: 'userPwd',

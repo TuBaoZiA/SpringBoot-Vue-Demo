@@ -86,10 +86,10 @@
 </template>
 
 <script>
-  import waves from '@/directive/waves'
-  import Pagination from '@/components/Pagination'
-  import {selectPermission, deleteById, savePermission, updatePermission} from "@/api/permission";
-  import {deleteConfirm, successNotify} from "@/utils";
+  import waves from '../../../directive/waves'
+  import Pagination from '../../../components/Pagination'
+  import {selectPermission, deleteById, savePermission, updatePermission} from "../../../api/permission";
+  import {deleteConfirm, successNotify} from "../../../utils";
 
   export default {
     directives: { waves },

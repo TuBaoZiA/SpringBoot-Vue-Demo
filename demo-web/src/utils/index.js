@@ -1,6 +1,6 @@
 import {Notification, MessageBox, Message} from 'element-ui'
-import store from "@/store";
-import {resetUserInfo} from "@/api/user";
+import store from "../store";
+import {resetUserInfo} from "../api/user";
 
 export function parseTime(time, cFormat) {
   if (arguments.length === 0) {

@@ -260,9 +260,9 @@
 </template>
 
 <script>
-  import { getMyISAMList, deleteByIdMyISAM , insertMyISAM, updateMyISAM} from '@/api/testAPI'
-  import {deleteConfirm, parseDateTime, successNotify} from "@/utils";
-  import Pagination from '@/components/Pagination'
+  import { getMyISAMList, deleteByIdMyISAM , insertMyISAM, updateMyISAM} from '../../api/testAPI'
+  import {deleteConfirm, parseDateTime, successNotify} from "../../utils";
+  import Pagination from '../../components/Pagination'
 
   export default {
     // 自定义分页组件

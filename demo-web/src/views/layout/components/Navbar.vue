@@ -45,11 +45,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Breadcrumb from '@/components/Breadcrumb'
-import Hamburger from '@/components/Hamburger'
-import Screenfull from '@/components/Screenfull'
-import userPwd from '@/views/manager/users/userPwd'
-import userInfo from '@/views/manager/users/userInfo'
+import Breadcrumb from '../../../components/Breadcrumb'
+import Hamburger from '../../../components/Hamburger'
+import Screenfull from '../../../components/Screenfull'
+import userPwd from '../../../views/manager/users/userPwd'
+import userInfo from '../../../views/manager/users/userInfo'
 
 export default {
   components: {

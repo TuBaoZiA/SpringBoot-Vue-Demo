@@ -259,9 +259,9 @@
 </template>
 
 <script>
-  import { getInnoDBList, deleteByIdInnoDB , insertInnoDB, updateInnoDB} from '@/api/testAPI'
-  import {deleteConfirm, parseDateTime, successNotify} from "@/utils";
-  import Pagination from '@/components/Pagination'
+  import { getInnoDBList, deleteByIdInnoDB , insertInnoDB, updateInnoDB} from '../../api/testAPI'
+  import {deleteConfirm, parseDateTime, successNotify} from "../../utils";
+  import Pagination from '../../components/Pagination'
 
   export default {
     // 自定义分页组件

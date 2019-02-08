@@ -29,9 +29,9 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import {updateUserInfo} from "@/api/user"
+  import {updateUserInfo} from "../../../api/user"
   import myUpload from 'vue-image-crop-upload'
-  import {resetUser} from "@/utils";
+  import {resetUser} from "../../../utils";
 
   export default {
     name: 'userPwd',

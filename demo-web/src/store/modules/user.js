@@ -1,8 +1,8 @@
-import { login, getInfo, logout } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
-import Layout from '@/views/layout/Layout'
-import {componentsMap, constantRouterMap} from "@/router";
-import {webSocketClose} from "@/utils/webSocket";
+import { login, getInfo, logout } from '../../api/login'
+import { getToken, setToken, removeToken } from '../../utils/auth'
+import Layout from '../../views/layout/Layout'
+import {componentsMap, constantRouterMap} from "../../router";
+import {webSocketClose} from "../../utils/webSocket";
 
 /**
  *将后台的路由表进行格式化

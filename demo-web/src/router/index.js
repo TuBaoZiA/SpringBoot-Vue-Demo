@@ -7,9 +7,9 @@ import Layout from '../views/layout/Layout'
 Vue.use(Router);
 
 export const constantRouterMap = [
-  { path: '/login', component: () => import('@/views/login/index'), hidden: true },
-  { path: '/404', component: () => import('@/views/errorPage/404'), hidden: true },
-  { path: '/401', component: () => import('@/views/errorPage/401'), hidden: true },
+  { path: '/login', component: () => import('../views/login/index'), hidden: true },
+  { path: '/404', component: () => import('../views/errorPage/404'), hidden: true },
+  { path: '/401', component: () => import('../views/errorPage/401'), hidden: true },
 
   {
     path: '/redirect',
@@ -18,7 +18,7 @@ export const constantRouterMap = [
     children: [
       {
         path: '/redirect/:path*',
-        component: () => import('@/views/redirect/index')
+        component: () => import('../views/redirect/index')
       }
     ]
   },
@@ -29,7 +29,7 @@ export const constantRouterMap = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('../views/dashboard/index'),
         name: 'dashboard',
         meta: { title: '首页', icon: 'dashboard', noCache: true }
       }
@@ -45,13 +45,13 @@ export const constantRouterMap = [
       {
         path: 'testMyISAM',
         name: 'TableMyISAM',
-        component: () => import('@/views/table/myISAM'),
+        component: () => import('../views/table/myISAM'),
         meta: { title: 'MyISAM引擎', icon: 'table' }
       },
       {
         path: 'testInnoDB',
         name: 'TableInnoDB',
-        component: () => import('@/views/table/innoDB'),
+        component: () => import('../views/table/innoDB'),
         meta: { title: 'InnoDB引擎', icon: 'table' }
       }
     ]
@@ -64,11 +64,11 @@ export default new Router({
 })
 
 export const componentsMap = {
-  manager_users : () => import('@/views/manager/users/index'),
-  manager_roles : () => import('@/views/manager/roles/index'),
-  manager_permissions : () => import('@/views/manager/permissions/index'),
-  manager_menus : () => import('@/views/manager/menus/index'),
-  manager_jobs : () => import('@/views/manager/jobs/index'),
-  manager_druid: () => import('@/views/manager/druid/index')
+  manager_users : () => import('../views/manager/users/index'),
+  manager_roles : () => import('../views/manager/roles/index'),
+  manager_permissions : () => import('../views/manager/permissions/index'),
+  manager_menus : () => import('../views/manager/menus/index'),
+  manager_jobs : () => import('../views/manager/jobs/index'),
+  manager_druid: () => import('../views/manager/druid/index')
 };
 

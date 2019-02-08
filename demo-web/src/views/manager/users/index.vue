@@ -130,11 +130,11 @@
 </template>
 
 <script>
-  import waves from '@/directive/waves'
-  import Pagination from '@/components/Pagination'
-  import {deleteById, saveUser, selectUsers, updateUserRole, selectCount} from "@/api/user";
-  import {rolesDrop} from "@/api/common";
-  import {deleteConfirm, successNotify} from "@/utils";
+  import waves from '../../../directive/waves'
+  import Pagination from '../../../components/Pagination'
+  import {deleteById, saveUser, selectUsers, updateUserRole, selectCount} from "../../../api/user";
+  import {rolesDrop} from "../../../api/common";
+  import {deleteConfirm, successNotify} from "../../../utils";
 
   export default {
     directives: { waves },

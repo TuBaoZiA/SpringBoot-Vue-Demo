@@ -74,10 +74,10 @@
 </template>
 
 <script>
-  import waves from '@/directive/waves'
-  import Pagination from '@/components/Pagination'
-  import {deleteConfirm, successNotify} from "@/utils";
-  import {deleteJob, pauseJob, resumeJob, saveJob, selectJob, updateJob} from "@/api/job";
+  import waves from '../../../directive/waves'
+  import Pagination from '../../../components/Pagination'
+  import {deleteConfirm, successNotify} from "../../../utils";
+  import {deleteJob, pauseJob, resumeJob, saveJob, selectJob, updateJob} from "../../../api/job";
 
   export default {
     directives: { waves },

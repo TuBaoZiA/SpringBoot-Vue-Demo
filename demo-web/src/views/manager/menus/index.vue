@@ -132,11 +132,11 @@
 
 <script>
 
-  import treeTable from '@/components/TreeTable'
-  import {deleteById, saveMenu, selectCount, selectMenus, updateMenu} from "@/api/menu";
-  import {menusDrop, permissionsDrop} from "@/api/common";
-  import {deleteConfirm, successNotify} from "@/utils";
-  import iconDialog from '@/views/svg-icons/icon-dialog'
+  import treeTable from '../../../components/TreeTable'
+  import {deleteById, saveMenu, selectCount, selectMenus, updateMenu} from "../../../api/menu";
+  import {menusDrop, permissionsDrop} from "../../../api/common";
+  import {deleteConfirm, successNotify} from "../../../utils";
+  import iconDialog from '../../../views/svg-icons/icon-dialog'
 
   export default {
     name: 'TreeTableDemo',

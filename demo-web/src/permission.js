@@ -4,7 +4,7 @@ import 'nprogress/nprogress.css'// Progress 进度条样式
 import store from './store'
 import {getToken } from "./utils/auth";
 
-import {initWebSocket} from "@/utils/webSocket";
+import {initWebSocket} from "./utils/webSocket";
 
 const whiteList = ['/login']; // 不重定向白名单
 router.beforeEach((to, from, next) => {

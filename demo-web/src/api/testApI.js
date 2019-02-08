@@ -1,4 +1,4 @@
-import request from '@/utils/request'
+import request from '../utils/request'
 
 export function getMyISAMList(params) {
   if(params.birthdayData != null && params.birthdayData.length > 0) {
