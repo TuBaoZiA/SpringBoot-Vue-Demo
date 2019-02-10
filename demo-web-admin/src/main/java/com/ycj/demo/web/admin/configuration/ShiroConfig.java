@@ -1,5 +1,7 @@
-package com.ycj.demo.web.admin.shiro;
+package com.ycj.demo.web.admin.configuration;
 
+import com.ycj.demo.web.admin.component.shiro.JWTFilter;
+import com.ycj.demo.web.admin.component.shiro.MyShiroRealm;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.realm.Realm;

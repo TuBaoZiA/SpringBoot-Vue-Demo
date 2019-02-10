@@ -3,7 +3,7 @@ package com.ycj.demo.web.admin.dao;
 
 import com.github.pagehelper.Page;
 import com.ycj.demo.domain.Role;
-import com.ycj.demo.web.admin.tkmybatis.MyMapper;
+import com.ycj.demo.web.admin.component.MyMapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

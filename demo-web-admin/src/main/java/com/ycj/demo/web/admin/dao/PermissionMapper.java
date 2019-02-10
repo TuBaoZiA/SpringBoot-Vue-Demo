@@ -3,7 +3,7 @@ package com.ycj.demo.web.admin.dao;
 
 
 import com.ycj.demo.domain.Permission;
-import com.ycj.demo.web.admin.tkmybatis.MyMapper;
+import com.ycj.demo.web.admin.component.MyMapper;
 
 
 import java.util.List;

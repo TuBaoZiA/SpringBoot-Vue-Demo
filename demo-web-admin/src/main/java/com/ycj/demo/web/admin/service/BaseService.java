@@ -3,7 +3,7 @@ package com.ycj.demo.web.admin.service;
 
 import com.github.pagehelper.PageHelper;
 import com.ycj.demo.domain.BaseEntity;
-import com.ycj.demo.web.admin.tkmybatis.MyMapper;
+import com.ycj.demo.web.admin.component.MyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 

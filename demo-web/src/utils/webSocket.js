@@ -13,7 +13,8 @@ export function webSocketOnSend(agentData){
 //1.1、心跳
 export function initWebSocket(){
   let name = store.getters.name;
-  let url = "ws://47.106.123.183:8080/webSocket/"+name;
+  //47.106.123.183
+  let url = "ws://localhost:8080/webSocket/"+name;
   webSock = new WebSocket(url);
   webSock.onopen = webSocketOnOpen;
   webSock.onerror = webSocketOnError;

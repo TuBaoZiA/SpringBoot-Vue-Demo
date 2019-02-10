@@ -1,4 +1,4 @@
-package com.ycj.demo.web.admin.swagger;
+package com.ycj.demo.web.admin.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /** @EnableSwagger2 启用Swagger2*/
 @Configuration
-public class Swagger2 {
+public class SwaggerConfig {
 
     @Bean
     public Docket createRestApi() {

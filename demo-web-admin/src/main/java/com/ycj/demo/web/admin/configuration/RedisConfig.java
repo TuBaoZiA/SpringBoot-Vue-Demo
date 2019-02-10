@@ -1,4 +1,4 @@
-package com.ycj.demo.web.admin.redis;
+package com.ycj.demo.web.admin.configuration;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

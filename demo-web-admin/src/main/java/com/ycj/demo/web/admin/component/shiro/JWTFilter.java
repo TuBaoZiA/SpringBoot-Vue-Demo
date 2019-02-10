@@ -1,4 +1,4 @@
-package com.ycj.demo.web.admin.shiro;
+package com.ycj.demo.web.admin.component.shiro;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ycj.demo.result.CodeMsg;

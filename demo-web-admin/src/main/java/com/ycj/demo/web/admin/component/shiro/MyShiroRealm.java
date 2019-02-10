@@ -1,9 +1,9 @@
-package com.ycj.demo.web.admin.shiro;
+package com.ycj.demo.web.admin.component.shiro;
 
 import com.ycj.demo.domain.User;
-import com.ycj.demo.web.admin.redis.RedisService;
-import com.ycj.demo.web.admin.redis.key.TokenKey;
-import com.ycj.demo.web.admin.redis.key.UserKey;
+import com.ycj.demo.web.admin.component.RedisService;
+import com.ycj.demo.web.admin.util.redis.key.TokenKey;
+import com.ycj.demo.web.admin.util.redis.key.UserKey;
 import com.ycj.demo.result.CodeMsg;
 import com.ycj.demo.web.admin.service.UserService;
 import com.ycj.demo.web.admin.util.JwtUtil;

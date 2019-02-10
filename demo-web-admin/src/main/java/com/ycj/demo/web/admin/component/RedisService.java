@@ -1,17 +1,14 @@
-package com.ycj.demo.web.admin.redis;
+package com.ycj.demo.web.admin.component;
 
-import com.ycj.demo.web.admin.redis.key.KeyPrefix;
+import com.ycj.demo.web.admin.util.redis.key.KeyPrefix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 
-import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-@Service
 /**
  * redis工具类
  */

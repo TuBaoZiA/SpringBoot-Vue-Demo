@@ -1,4 +1,4 @@
-package com.ycj.demo.web.admin.redis.key;
+package com.ycj.demo.web.admin.util.redis.key;
 
 public interface KeyPrefix {
 

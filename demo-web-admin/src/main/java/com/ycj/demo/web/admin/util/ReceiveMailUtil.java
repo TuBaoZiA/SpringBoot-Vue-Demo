@@ -1,4 +1,4 @@
-package com.ycj.demo.web.admin.mail;
+package com.ycj.demo.web.admin.util;
 
 import com.sun.mail.imap.IMAPMessage;
 import com.sun.mail.imap.IMAPStore;
@@ -15,12 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-@Component
-public class ReceiveMail {
-
-    public static void main(String[] args) throws Exception {
-        receive();
-    }
+public class ReceiveMailUtil {
 
     /**
      * 接收邮件
@@ -123,7 +118,8 @@ public class ReceiveMail {
             boolean isContainerAttachment = isContainAttachment(msg);
             System.out.println("是否包含附件：" + isContainerAttachment);
             if (isContainerAttachment) {
-                saveAttachment(msg, "c:\\mailtmp\\"+msg.getSubject() + "_"); //保存附件
+                saveAttachment(msg, "c:\\mailtmp\\"+msg.getSubject() + "_");
+                //保存附件
             }
             StringBuffer content = new StringBuffer(30);
             getMailTextContent(msg, content);

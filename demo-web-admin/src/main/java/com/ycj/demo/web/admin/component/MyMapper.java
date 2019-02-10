@@ -1,4 +1,4 @@
-package com.ycj.demo.web.admin.tkmybatis;
+package com.ycj.demo.web.admin.component;
 
 
 import tk.mybatis.mapper.common.Mapper;

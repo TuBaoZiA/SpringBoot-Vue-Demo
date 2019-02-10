@@ -1,4 +1,4 @@
-package com.ycj.demo.web.admin.websocket;
+package com.ycj.demo.web.admin.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -35,7 +35,7 @@
         </filter>
         <!-- 可让每天产生一个日志文件，最多 180 个，自动回滚 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/%d{yyyy-MM,aux}/demo-%d{yyyy-MM-dd}.log
+            <fileNamePattern>${LOG_HOME}/%d{yyyy-MM,aux}/demo-web-admin-%d{yyyy-MM-dd}.log
             </fileNamePattern>
             <!-- keep 180 days' worth of history capped at 50GB total size -->
             <maxHistory>180</maxHistory>

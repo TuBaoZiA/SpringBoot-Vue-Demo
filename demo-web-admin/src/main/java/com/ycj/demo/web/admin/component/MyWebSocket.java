@@ -1,8 +1,7 @@
-package com.ycj.demo.web.admin.websocket;
+package com.ycj.demo.web.admin.component;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-
 import com.ycj.demo.result.Result;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Component;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
 @ServerEndpoint(value = "/webSocket/{name}")
@@ -37,7 +35,7 @@ public class MyWebSocket {
     /**
      * 连接建立成功调用的方法*/
     @OnOpen
-    public void onOpen(@PathParam("name") String name, Session session) throws IOException {
+    public void onOpen(@PathParam("name") String name, Session session) {
         this.session = session;
         this.name = name;
 
